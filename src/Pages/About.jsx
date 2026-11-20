@@ -1,56 +1,9 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-const About = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-[#0f172a] px-6 py-24">
-      <div
-        data-aos="zoom-in-down"
-        className="max-w-5xl w-full mx-auto rounded-3xl p-10 border border-[#3fa4ff]/30 bg-[#05101d]/70 backdrop-blur-2xl text-white  shadow-[0_0_50px_#3fa4ff] transition duration-500 ease-in-out transform hover:scale-105"
-      >
-        <div className="text-center">
-          <div className="mb-6 animate-bounce-slow">
-            <img
-              src="https://images.hdqwalls.com/download/react-js-logo-no-1920x1200.jpg"
-              alt="Profile"
-              className="w-36 h-36 mx-auto rounded-full border-4 border-[#3fa4ff] shadow-[0_8px_30px_rgba(63,164,255,0.5)] object-cover transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#3fa4ff] to-[#0F4C81] drop-shadow-lg">
-            Aitzaz Afzal
-          </h2>
-          <p className="text-xl font-medium text-blue-100 mb-6 tracking-wide">
-            Full Stack Web Developer (MERN)
-          </p>
-
-          <p className="text-lg md:text-xl leading-relaxed text-blue-200 max-w-3xl mx-auto">
-            I specialize in crafting fast, secure, and scalable applications
-            using the{" "}
-            <span className="text-green-400 font-semibold">MERN Stack</span>:
-            MongoDB, Express, React, and Node.js. I build responsive frontends
-            and strong backends for seamless user experiences.
-            <br />
-            <br />
-            Passionate about{" "}
-            <span className="text-[#3fa4ff] font-medium">clean code</span>,
-            <span className="text-[#3fa4ff] font-medium"> modern UI/UX</span>,
-            and{" "}
-            <span className="text-[#3fa4ff] font-medium">
-              lifelong learning
-            </span>
-            , I bring focus, creativity, and dedication to every project.
-          </p>
-        </div>
-      </div>
-
-      {/* Custom slow bounce animation */}
-    </section>
-  );
-};
-
-export default About;
+import Icon from '../Components/Icon';
+export default function About() {
+  return <section className="about-section section" id="about" aria-labelledby="about-title"><div className="container about-grid">
+    <div data-reveal><p className="eyebrow">A LITTLE ABOUT ME</p><h2 id="about-title">An eye for the interface.<br/>A mind for the system.</h2><div className="location"><Icon name="pin" size={18}/> Based in Lahore, Pakistan</div></div>
+    <div className="about-copy" data-reveal><p className="intro">I’m Aitzaz Afzal, a full stack developer with 2+ years of experience turning ideas into working applications.</p><p>I work across React, Next.js, Node.js and React Native, connecting responsive interfaces with APIs, databases and cloud services. My projects also include AI integrations, payment systems and subscription services.</p><p>I care about clear interfaces, maintainable code and understanding how each part of a product fits together.</p>
+      <div className="education"><span className="eyebrow">EDUCATION</span><h3>BS Computer Science</h3><p>Government College University, Faisalabad <span>Expected 2027</span></p><div className="previous-education"><p><strong>ICS (Physics)</strong><span>Lahore · 2021–2023</span></p><p><strong>Matric</strong><span>Future Vision Academy · 2019–2021</span></p></div></div>
+    </div>
+  </div></section>;
+}

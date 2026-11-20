@@ -1,50 +1,14 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
-const Footer = () => {
-  return (
-    <footer className="bg-[#0f172a] text-white py-12 px-6 shadow-inner">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Name + Title */}
-        <h2 className="text-4xl font-bold text-cyan-400 mb-2 animate-pulse">
-          Aitzaz Afzal
-        </h2>
-        <p className="text-lg text-gray-300 mb-6 tracking-wider">
-          MERN Stack Developer | JavaScript Enthusiast | UI/UX Explorer
-        </p>
-
-        {/* Social Links with Hover Effects */}
-        <div className="flex justify-center gap-6 mb-8 text-3xl">
-          <a
-            href="https://github.com/Aitzaz786"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition transform hover:scale-110 duration-300"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition transform hover:scale-110 duration-300"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="mailto:your-email@example.com"
-            className="hover:text-cyan-400 transition transform hover:scale-110 duration-300"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-
-        <div className="text-sm text-gray-500 border-t border-gray-700 pt-4">
-          © 2025 Aitzaz Afzal — All Rights Reserved.
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+import { useState } from 'react';
+import { profile } from '../data';
+import Icon from '../Components/Icon';
+export default function Footer(){
+  const [copyState,setCopyState]=useState('Copy email');
+  async function copyEmail(){
+    try {await navigator.clipboard.writeText(profile.email);setCopyState('Email copied');}
+    catch {setCopyState('Please select and copy the email above');}
+  }
+  return <footer id="contact" className="contact-section"><div className="container">
+    <div className="contact-top" data-reveal><div><p className="eyebrow light">LET’S CONNECT</p><h2>Good work starts<br/>with a conversation.</h2><p>Have a role, a project, or an idea in mind?<br/>I’d love to hear about it.</p></div><div className="contact-actions"><a className="contact-email" href={`mailto:${profile.email}`}>{profile.email}</a><div className="contact-buttons"><a className="button button-primary" href={`mailto:${profile.email}`}><Icon name="mail" size={18}/> Say hello</a><button className="button button-outline" type="button" onClick={copyEmail}><Icon name={copyState==='Email copied'?'check':'copy'} size={17}/>{copyState==='Email copied'?'Copied':'Copy email'}</button></div><p className="copy-status" role="status">{copyState==='Copy email'?'':copyState}</p><a href="tel:+923456400191" className="phone">{profile.phone}</a></div></div>
+    <div className="footer-bottom"><a className="brand" href="#home"><img className="brand-logo" src={profile.logo} alt=""/><span>Aitzaz Afzal</span></a><span>© {new Date().getFullYear()} · Lahore, Pakistan</span><div><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={profile.resume} download="Aitzaz_Afzal_Resume.pdf">Resume</a></div></div>
+  </div></footer>;
+}

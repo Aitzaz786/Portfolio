@@ -1,12 +1,38 @@
-# React + Vite
+# Aitzaz Afzal — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, single-page React portfolio based on Aitzaz's updated resume.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requires Node.js 20.19+ or 22.12+.
 
-## Expanding the ESLint configuration
+```sh
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Production build
+
+```sh
+npm run build
+npm run preview
+```
+
+Deploy the contents of `dist/` to static hosting. Relative asset paths support both a root domain and GitHub Pages under `/Portfolio/`. The site uses section anchors, so no server routing configuration is needed.
+
+## Edit content
+
+- `src/data.js`: projects, career history, skills and contact details
+- `src/Pages/`: page sections
+- `src/index.css`: responsive styling and subtle animations
+- `public/Aitzaz_Afzal_Resume.pdf`: downloadable resume
+- `public/aitzaz-logo.svg`: custom AA monogram used in the navbar, footer and browser tab
+- `index.html`: SEO title and description
+
+Custom-domain projects appear before Vercel-hosted projects. Project filters, mobile navigation, email copying, contact links and resume download are implemented locally. There is no dependency on the GitHub API to render projects.
+
+Animation uses CSS and IntersectionObserver, with reduced-motion support. No WebGL, animation framework, carousel or continuous animation is loaded. The three project covers are typographic portfolio artwork, not application screenshots.
+
+Fonts request Google Fonts with system-font fallbacks. The site remains usable when external fonts are unavailable.
+
+This update is local source work; publishing is a separate step.

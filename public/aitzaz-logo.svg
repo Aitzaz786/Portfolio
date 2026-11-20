@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Aitzaz Afzal monogram</title>
+  <desc id="desc">Two interlocking letter A forms in white and mint on a navy square.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="#101c2c"/>
+  <path d="M10.5 46.5 23 17.5l12.5 29" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16.5 34.5h13" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M28.5 46.5 41 17.5l12.5 29" fill="none" stroke="#a8efcf" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34.5 34.5h13" fill="none" stroke="#a8efcf" stroke-width="5" stroke-linecap="round"/>
+</svg>
