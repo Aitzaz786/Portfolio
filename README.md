@@ -18,7 +18,15 @@ npm run build
 npm run preview
 ```
 
-Deploy the contents of `dist/` to static hosting. Relative asset paths support both a root domain and GitHub Pages under `/Portfolio/`. The site uses section anchors, so no server routing configuration is needed.
+## Deploy to Vercel
+
+Import the repository into Vercel and keep the detected Vite settings:
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+
+Vercel detects the framework automatically, so no additional deployment package or custom base path is required.
 
 ## Edit content
 
